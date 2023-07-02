@@ -1,0 +1,9 @@
+CREATE TABLE users (
+	id INT(11) PRIMARY KEY AUTO_INCREMENT,
+    email VARCHAR(120) NOT NULL,
+    password VARCHAR(48) NOT NULL,
+    auth_key VARCHAR(48) NOT NULL
+    )
+
+
+    

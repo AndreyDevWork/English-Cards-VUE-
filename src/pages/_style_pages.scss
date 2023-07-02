@@ -1,0 +1,14 @@
+.main {
+  padding: 0 100px;
+  display: grid;
+  grid-template-columns: 100px 540px;
+  justify-content: space-between;
+  background: url('@/assets/img/main_bg.jpg') no-repeat 50%/cover;;
+  height: 100vh;
+}
+
+@media (max-height: 750px) {
+  .main {
+    height: 750px;
+  }
+}

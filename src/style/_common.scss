@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Roboto:wght@400;700;900&display=swap');
+@import '@/style/reboot';
+@import '@/style/titles';
+@import '@/style/variables';
+
+@import '@/components/UI/inputs/input-style';
+@import '@/pages/style_pages.scss';
+@import '@/components//forms/style_form';
+
+
+* {
+  font-family: 'inter', sans-serif;
+  font-weight: 400;
+}

@@ -1,0 +1,43 @@
+.input-block {
+  margin-top: 30px;
+  width: 100%;
+  position: relative;
+  svg {
+    position: absolute;
+    top: 39px;
+    right: 15px;
+    cursor: pointer;
+  }
+  &__label {
+  margin-left: 13px;
+  text-align: start;
+  display: block;
+  }
+  &__input {
+    margin-top: 6px;
+    width: 100%;
+    border-radius: 18px;
+    height: 58px;
+    border: 1px solid #c2c2c2;
+    padding: 20px 13px 20px 13px;
+    transition: .2s all;
+    &:focus {
+      outline: none;
+      border: 1px solid var(--black-color);
+      box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 1);
+    }
+    &::placeholder {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 19px;
+    color: var(--placeholder);
+    letter-spacing: normal;
+    }
+  }
+}
+.invalid {
+  border: 1px solid var(--red-color);
+}
+.valid {
+  border: 1px solid var(--main-color);
+}
