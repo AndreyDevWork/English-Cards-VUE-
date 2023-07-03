@@ -13,7 +13,7 @@ export default async function sendFormSignUp(name, email, password) {
   }
 
   try {
-    const response = await axios.post('http://englishcards/api/controllers/signup.php', formData, config);
+    const response = await axios.post('/api/controllers/signup.php', formData, config);
     return response;
   } catch (error) {
     alert('Ошибка, попробуйте позже');

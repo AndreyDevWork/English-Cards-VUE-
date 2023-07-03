@@ -27,6 +27,22 @@
         return false;
       }
     }
+
+    public static function validateImg($name) {
+      if ($_FILES["$name"]['error'] === UPLOAD_ERR_OK) {
+        $tmpFilePath = $_FILES["$name"]['tmp_name'];
+        if ($imageInfo = getimagesize($tmpFilePath)) {
+          $allowedTypes = [IMAGETYPE_JPEG, IMAGETYPE_PNG, IMAGETYPE_GIF];
+          if (in_array($imageInfo[2], $allowedTypes)) {
+              return true;
+          } else {
+              return false;
+          }
+        } else {
+            return false;
+        }
+      }
+    }
   }
 
 
