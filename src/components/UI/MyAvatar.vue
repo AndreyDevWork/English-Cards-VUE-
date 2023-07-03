@@ -50,7 +50,9 @@ export default {
     async sendAvatarMethod(event) {
       const file = event.target.files[0]
       const response = await sendMyAvatar(file);
-      console.log(response)
+      if (response?.status == 200) {
+        this.takePath();
+      }
     }
   },
   mounted() {

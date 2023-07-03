@@ -5,13 +5,12 @@
     public function uploadAvatar() {
       if(FormValidate::validateImg('avatar')) {
         $fileName = uniqid() . $_FILES['avatar']['name'];
-        $avatarPath = $_SERVER['DOCUMENT_ROOT'] . '/upload/avatars/';
-        $pathToBase = '../upload/avatars/' . $fileName;
-        move_uploaded_file($_FILES['avatar']['tmp_name'], $avatarPath . $fileName);
+        $avatarPath = '../upload/avatars/' . $fileName;
+        move_uploaded_file($_FILES['avatar']['tmp_name'], $_SERVER['DOCUMENT_ROOT'] . '/upload/avatars/' . $fileName);
         
         $mysql = DataBase::connectDB();
         $prepare = $mysql->prepare("UPDATE `users` SET `avatar` = ? WHERE `id` = ?");
-        $prepare->bind_param('ss', $pathToBase, $_SESSION['id']);
+        $prepare->bind_param('ss', $avatarPath, $_SESSION['id']);
         $prepare->execute();
 
         echo 'Ok';
